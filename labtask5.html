@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<h2>IT Center Ticket Form</h2>
+<form action="/action_page.php" >
+   
+      <label for="problem">Type of Problem:</label>
+      <select id="problem" name="problem" required>
+          <option value="cvcreator_tool">CV Creator Tool</option>
+          <option value="dataprivacy">Data Privacy Concerns</option>
+          <option value="helpguidance" selected>Help & Guidance</option>
+          <option value="fileupload_issues">File Upload Issues</option>
+      </select><br><br>
+      <label>Urgency:</label><br>
+      <label>
+     <input type="radio" name="urgency" value="not_urgent"> Not urgent</label><br>
+      <label>
+     <input type="radio" name="urgency" value="mild" checked> Mild</label><br>
+      <label>
+     <input type="radio" name="urgency" value="highly_urgent"> Highly Urgent</label><br><br>
+      <label for="ticketfile">Upload a Picture (JPG, JPEG, PNG):</label><br>
+      <input type="file" id="ticketfile" name="ticketfile" accept=".jpg, .jpeg, .png" required> <br><br>
+      
+      <button type="submit">Submit Ticket</button>
+  </form>
+</body>
+</html>
