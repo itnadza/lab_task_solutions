@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> About me </title>
+</head>
+<body>
+
+    <header> 
+        <h1>Nadža Hasanović</h1> 
+    </header> 
+
+    <nav> 
+        <ul> 
+            <li><a href="#about">About Me</a></li> 
+            <li><a href="#experience">Experience</a></li> 
+    <li><a href="#skills">Skills</a></li> 
+    </ul> 
+    </nav> 
+
+    <section id="about"> 
+        <article> 
+            <h2>Introduction</h2>
+             <p>Experienced web developer with a passion for creating dynamic web applications.</p>
+         </article>
+     </section>
+    
+     <button onclick="getLocation()">Get My Location</button>
+     <p id="location"></p>
+     
+     <script>
+         function getLocation() {
+             if (navigator.geolocation) {
+                 navigator.geolocation.getCurrentPosition(showPosition, showError);
+             } else {
+                 document.getElementById("location").innerText = "Geolocation is not supported by this browser.";
+             }
+         }
+     
+         function showPosition(position) {
+             document.getElementById("location").innerText = 
+                 `Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`;
+         }
+     
+         function showError(error) {
+        switch(error.code) {
+            case error.PERMISSION_DENIED:
+                document.getElementById("location").innerText = "User denied the request for Geolocation.";
+                break;
+            case error.POSITION_UNAVAILABLE:
+                document.getElementById("location").innerText = "Location information is unavailable.";
+                break;
+            case error.TIMEOUT:
+                document.getElementById("location").innerText = "The request to get user location timed out.";
+                break;
+            case error.UNKNOWN_ERROR:
+                document.getElementById("location").innerText = "An unknown error occurred.";
+                break;
+        }
+    }
+</script>
+
+<section id="experience"> 
+    <article> 
+        <h2>Professional experience</h2>
+         <p>For the past five years I have worked on numerous web projects and gotten certifications and awards for my work. I have experience in python, HMTL, Javascript and CSS.</p>
+     </article>
+ </section>
+
+
+
+
+
+
+
+
+
+    <footer> 
+        <p>Contact: nadza.hasanovic@stu.ibu.edu.ba</p>
+         <p>(c) 2024 Nadža Hasanović</p>
+    </footer>
+    
+
+
+</body>
+</html> 
